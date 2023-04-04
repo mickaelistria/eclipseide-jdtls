@@ -1,0 +1,8 @@
+name: Enhancement
+description: Suggest an enhancement
+title: " "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for suggesting an enhancement!

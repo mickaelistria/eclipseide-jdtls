@@ -1,0 +1,57 @@
+name: Enhancement
+description: Suggest an enhancement
+title: " "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for suggesting an enhancement!
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Tested on latest
+      description: Let's make sure issue is not already fixed in snapshots first.
+      options:
+        - label: I verified I can reproduce this issue against latest snapshots build
+          required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: What did you try? What did you expect to happen? What happened?
+      value: |
+        From a fresh installation and clean workspace:
+        * <steps to setup environment>
+        I tried
+        * <steps to trigger issue>
+        I expected
+        * <what was the expected outcome?>
+        But got
+        * <what is the actual undesired behavior?>
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output (usually in `<workspace>/.metadata/.log`). This will be automatically formatted into code, so no need for backticks.
+      render: shell
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Please tell more about your environment
+      value: <OS>, <Version>,...
+    validations:
+      required: true
+  - type: checkboxes
+    id: OSS
+    attributes:
+      label: I understand OSS
+      description: Let's clarify expectations
+      options:
+        - label: |
+            I understand suggesting an enhancement doesn't mandate anyone to implement it.
+            Other contributors may consider this suggestion, or not, at their own convenience.
+            The most efficient way to get it fixed is that I implement it myself and contribute it back as a good quality patch to the project.          
+          required: true
